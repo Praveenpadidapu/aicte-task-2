@@ -1,0 +1,650 @@
+//AICTE WEB DEVELOPMENT INTERN 
+//GLITCH LINK:https://habitual-locrian-bush.glitch.me/
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+      <style>
+            * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'poppins', sans-serif;
+    text-decoration: none;
+}
+
+body {
+    overflow-x: hidden;
+    background: #1e1e1e;
+}
+
+.header-1 {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background: #1e1e1e;
+}
+
+header {
+    padding: 40px 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo .logo-text {
+    font-size: 34px;
+    font-weight: 500;
+    color: #fff;
+}
+
+nav .New {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 45px;
+    right: 3%;
+    z-index: 5;
+    cursor: pointer;
+    display: none;
+}
+
+nav .New span {
+    display: block;
+    background-color: #007ced;
+    margin: 5px 0px;
+    height: 3px;
+    transition: 0.3s;
+    transition-property: transform, opacity;
+}
+
+nav .nav {
+    list-style-type: none;
+    font-size: 26px;
+}
+
+nav .nav li {
+    display: inline-block;
+}
+
+nav .nav li a {
+    color: #e5e5e5;
+    margin-right: 2.5rem;
+}
+
+nav .nav li a:hover {
+    color: #0ef;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 12rem;
+}
+
+.container .hero-pic {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 10px solid #444;
+    box-shadow: 5px 7px 25px rgba(0, 0, 0, 0.5);
+}
+
+.hero-pic img {
+    height: 100%;
+    width: 100%;
+    transition: 0.5s;
+}
+
+.hero-pic img:hover {
+    transform: scale(1.2);
+}
+
+.home-content {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.home-content h5 {
+    color: #e5e5e5;
+    font-size: 20px;
+}
+
+.home-content h5 span {
+    color: #0ef;
+    font-size: 26px;
+}
+
+.home-content h1 {
+    color: rgb(17, 194, 207);
+}
+
+.home-content p {
+    color: #e5e5e5;
+    font-size: 20px;
+}
+
+.btn-group {
+    margin: 45px 0;
+}
+
+.btn-group .btn {
+    border-color: #d5d5d5;
+    color: #fff;
+    background-color: #333;
+    padding: 12px 25px;
+    margin: 5px 0px;
+    margin-right: 7px;
+    border-radius: 30px;
+    border: 2px solid #e5e5e5;
+    box-shadow: 0 10px 10px - 8px rgb(0 0 0 / 78%);
+}
+
+.btn.active {
+    border-color: #0ef;
+}
+
+.btn-box {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #0ef;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #081b29;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
+    transition: .5s ease;
+    margin-bottom: 0;
+}
+
+.btn-box:hover {
+    box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50px cyan, 0 0 100px cyan, 0 0 200px cyan;
+}
+
+.home-content .home-sci i {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #0ef;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #0ef;
+    text-decoration: none;
+    margin: 30px 15px 30px 0;
+    transition: .5s ease;
+}
+
+.home-content .home-sci i:hover {
+    background: #0ef;
+    color: #081b29;
+    box-shadow: 0 0 20px #0ef;
+    transform: rotate(360deg);
+}
+
+.sub-title {
+    text-align: center;
+    font-size: 40px;
+    padding-bottom: 70px;
+    color: #fff;
+}
+
+.sub-title span {
+    color: #0ef;
+}
+
+section {
+    padding-top: 4vh;
+    height: 98vh;
+    margin: 0 10rem;
+    box-sizing: border-box;
+    min-height: fit-content;
+}
+
+.section-container {
+    display: flex;
+}
+
+#profile {
+    diaplay: flex;
+    justify-content: center;
+    gap: 5rem;
+    height: 80vh;
+}
+
+.section__pic-container {
+    display: flex;
+    height: 400px;
+    width: 400px;
+    margin: auto 0;
+}
+
+.section__text {
+    align-self: center;
+    text-align: center;
+}
+
+.section__text p {
+    font-size: 600;
+}
+
+.section-p1 {
+    text-align: center;
+    color: #fff;
+}
+
+.section_text_p2 {
+    font-size: 1.72rem;
+    margin-bottom: 1rem;
+}
+
+.title {
+    font-size: 3rem;
+    text-align: center;
+}
+
+#socials-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+.icon {
+    cursor: pointer;
+    height: 2rem;
+}
+
+#about {
+    position: relative;
+}
+
+.about-containers {
+    gap: 2rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.about-details-container {
+    justify-content: center;
+    flex-direction: column;
+}
+
+.about-containers,
+.about-details-container {
+    display: flex;
+}
+
+.about-pic {
+    border-radius: 2rem;
+}
+
+.about-text p {
+    color: aliceblue;
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 4rem;
+}
+
+.arrow {
+    position: absolute;
+    right: -5rem;
+    bottom: 2.5rem;
+}
+
+.details-container {
+    padding: 1.5rem;
+    flex: 1;
+    background: white;
+    border-radius: 2rem;
+    border-color: #0ef;
+    text-align: center;
+    background-color: rgb(177, 228, 231);
+}
+
+.section-container {
+    gap: 4rem;
+    height: 80%;
+}
+
+.section__pic-container {
+    height: 400px;
+    width: 400px;
+    margin: auto 0;
+}
+
+@media(max-width:930px) {
+    nav .New {
+        display: block;
+    }
+    .click {
+        top: 45px;
+    }
+    .click span {
+        position: absolute;
+        margin-top: 12px;
+    }
+    .click span:first-child {
+        transform: rotate(-45deg);
+    }
+    .click span:nth-child(2) {
+        opacity: 0;
+        margin: 0;
+    }
+    .click span:last-child(2) {
+        transform: rotate(45deg);
+        top: 0;
+    }
+    nav .nav {
+        position: absolute;
+        top: 110px;
+        right: -100%;
+        bottom: 0;
+        width: 60%;
+        height: 100vh;
+        background-color: #222;
+        z-index: 3;
+        box-shadow: 5px 13px 30px rgba(0, 0, 0, 0.1);
+        transition: 0.5s;
+        padding: 25px 0px;
+    }
+    nav .nav li {
+        display: block;
+    }
+    nav .nav li a {
+        display: block;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+}
+
+@media(max-width:768px) {
+    .container {
+        flex-direction: column;
+        padding-top: 2rem;
+    }
+    .home-content {
+        padding: 40px 0;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .about-containers {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 1200px) {}
+
+#experience,
+.experience-details-container {
+    margin-top: 2rem;
+}
+
+#profile,
+.section-container {
+    display: block;
+}
+
+.arrow {
+    display: none;
+}
+
+.section .section-container {
+    height: fit-content;
+}
+
+section {
+    margin: 0 5%;
+}
+
+.section__pic-container {
+    width: 275px;
+    height: 275px;
+    margin: 0 auto 2rem;
+}
+
+.about-containers {
+    margin-top: 0;
+}
+
+@media screen and (max-width: 600px;
+) {
+    .about-containers,
+}
+
+#contact {
+    text-align: left;
+}
+
+#contact .sub-title {
+    margin-bottom: 0px;
+    text-align: left;
+}
+
+#contact .contact-details p {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    color: #e5e5e5;
+    font-size: 20px;
+}
+</style>
+</head>
+
+<body>
+    <section>
+        <div class="header-1">
+            <div class="head">
+                <header>
+                    <div class="logo">
+                        <div class="logo-text">Padidapu Venkata Praveen Kumar</div>
+                    </div>
+                    <nav>
+                        <div class="New">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <ul class="nav">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Portfolio</a></li>
+                            <li><a href="#">Skills</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </nav>
+                </header>
+                <div class="container">
+                    <div class="hero-pic">
+                        <img src="https://cdn.glitch.global/78969422-27b8-48f7-a295-b56dbea607f6/148b56f0-9466-45ac-9916-3d5395131371.Praveen%20pic.jpg?v=1726044640145" width="280" height="300" alt="profile pic">
+                    </div>
+                    <div class="home-content">
+                        <h5>Hello, I'm <span class="input">Student</span></h5>
+                        <h1>Praveen Padidapu</h1>
+                        <p>Hello! I’m a passionate 2nd-year Computer Science Engineering student at Vishnu Engineering College.<br>With a strong foundation in programming and problem-solving, I’m constantly exploring new technologies and looking for opportunities
+                            to apply my knowledge in real-world projects.</p>
+                        <div class="home-sci">
+                            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                        </div>
+                        <div class="btn-group">
+                            <a href="#" class="btn-box">Download CV</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <br><br><br><br>
+        <p class="section-p1">Get To Know more</p>
+        <h1 class="sub-title">About<span>Me</span> </h1>
+        <div class="about-text">
+            <p>I completed my intermediate in SR Junior college in MPC branch And done my SSC in Bhashyam High School at Vizianagaram.<br> Certified in C programming Language by GIT Institute of Adavnced Technologies followed by 30 hours duration certified
+                by ISO.<br>Completed a course of study and received a passing grade offered by StandfordOnline,learning initiative of Standford University.<br>Iachieved an appreciation certificate for active participation and outstanding contributions
+                to Failathon.<br>Completed course of study by FullbridgeX, an online learning initiative of Fullbridge through edX.<br>Completed introduction to web development course offered by IBM.
+            </p>
+        </div>
+        <br>
+        <br>
+
+        <a href="#" class="btn-box">More About Me</a>
+        </div>
+        </div>
+
+        </div>
+
+        <img src="praveen photo.jpeg" width="280" height="300" alt="Arrow icon" class="icon arrow" onclick="location.href" .#experience>
+
+        <section id="experience">
+            <p class="section-p1">Explore My</p>
+            <h1 class="sub-title">MY<span>Skills</span></h1>
+            <div class="experience-details-container">
+                <div class="about-containers">
+                    <div class="details-container">
+                        <h2 class="experience-sub-title">Technical skills</h2><br>
+                        <div class="article-container">
+                            <article>
+                                <div>
+                                    <p>HTML - Experienced</P><br>
+                                </div>
+                            </article>
+                            <article>
+                                <div>
+                                    <p>CSS - intermediate</P><br>
+                                </div>
+                            </article>
+                            <article>
+                                <div>
+                                    <p>JavaScript - Basics</P><br>
+                                </div>
+                            </article>
+                            <article>
+                                <div>
+                                    <p>C - Experienced</P><br>
+                                </div>
+                            </article>
+                            <article>
+                                <div>
+                                    <p>Python - intermediate</P><br>
+                                </div>
+                            </article>
+                            <article>
+                                <div>
+                                    <p>Java - Basics</P><br>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="details-container">
+                        <h2 class="epxerience-sub-title">Professional Skills</h2><br>
+                        <div class="article-container">
+                            <article>
+                                <div>
+                                    <p>Communication - Experienced</P><br>
+                                </div>
+                            </article>
+                            <article>
+                                <div>
+                                    <p>Creativity - Intermediate</P><br>
+                                </div>
+                            </article>
+                            <article>
+                                <div>
+                                    <p>Problem Solving - Experienced</P><br>
+                                </div>
+                            </article>
+                            <article>
+                                <div>
+                                    <p>Team Work - Interediate</P><br>
+                                </div>
+                            </article>
+                            <article>
+                                <div>
+                                    <p>Communication - Experienced</P><br>
+                                </div>
+                            </article>
+                            <article>
+                                <div>
+                                    <p>Critical Thinking - Experienced</P><br>
+                                </div>
+                            </article>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+
+
+
+
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.js"></script>
+    <script>
+        var togglebtn = document.querySelector(".New");
+        var nav = document.querySelector(".nav");
+        var links = document.querySelector(".nav li");
+
+
+        togglebtn.addEventListener("click", function() {
+            this.classList.toggle("click");
+            nav.classList.toggle("open");
+        });
+
+        var typed = new Typed(".input", {
+            strings: ["Frontend Developer", "Student", "Web Developer"],
+            typeSpeed: 100,
+            backSpeed: 100,
+            backDelay: 1000,
+            loop: true
+        });
+    </script>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <section id="contact">
+        <!-- <p class="section-p1">Get In Touch</p> -->
+        <h1 class="sub-title">Contact<span> Me</span></h1>
+        <div class="contact-details">
+            <p><strong>Name:</strong> Praveen Padidapu</p>
+            <p><strong>Phone No:</strong> 8919444672</p>
+            <p><strong>Place:</strong> Bhimavaram </p>
+            <p><strong>Gmail:</strong> pvpk1127@gmail.com</p>
+
+        </div>
+    </section>
+</body>
+
+</html>
